@@ -14,7 +14,7 @@
     <?php   
     unset($_SESSION['login_username']);
     if (!isset($_SESSION['db_id'])) {
-        header('location: ../multi-link.live/index.php?e=loginFailed');
+        header('location: ../index.php?e=loginFailed');
         exit;
     }
 
@@ -25,7 +25,7 @@
 
 
 
-    echo '<a href="../multi-link.live/index.php">GO BACK</a>';
+    echo '<a href="../index.php">GO BACK</a>';
 ?>
 </body>
 </html>

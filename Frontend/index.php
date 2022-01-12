@@ -1,7 +1,7 @@
 <?php
-    include_once 'header.php'
+    include_once './multi-link.live/header.php'
 ?>
-<link href='./styles/index.css' rel='stylesheet'/>
+<link href='./multi-link.live/styles/index.css' rel='stylesheet'/>
 
 <section class='heroSection'>
 
@@ -27,5 +27,5 @@
         
 
 <?php
-    include_once 'footer.php'
+    include_once './multi-link.live/footer.php'
 ?>
