@@ -1,0 +1,30 @@
+.pageContainer{
+  background-image:linear-gradient(to bottom right, #5fa8b3, #e95e63);
+  height:100vh;
+  position: fixed;
+  width:100vw;
+}
+.header{
+  font-size:3vw;
+  margin:2vw;
+  margin-bottom:0vw;
+  text-align: center;
+}
+.contentWrapper{
+  width:100vw;
+  display:grid;
+  grid-template-columns:.7fr .3fr;
+  height:90vh;
+}
+.guiWrapper{
+  width:90%;
+  border-radius:1vw;
+  height:90%;
+  margin:auto;
+}
+.appWrapper{
+  width:20em;
+  border-radius:1vw;
+  height:40em;
+  margin:auto;
+}

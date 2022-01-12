@@ -1,0 +1,319 @@
+/*loading elems*/
+.pageWrapper{
+  position:fixed;
+  overflow:hidden;
+  height:100vh;
+  width:100vw;
+  z-index:2;
+  display:none;
+}
+.pageLoader{
+  height:100vh;
+  width:100vw;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:3;
+  opacity:1;
+  transition:opacity .5s;
+}
+.pageExitLoader{
+  height:100vh;
+  width:100vw;
+  position:fixed;
+  top:0;
+  left:0;
+  opacity:1;
+  transition:opacity .5s;
+}
+.hiderBG{
+  opacity:1;
+  width:inherit;
+  height:inherit;
+}
+.clearBG{
+  width:inherit;
+  height:inherit;
+  animation: fadeOpacity35 .5s;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeOpacity35{
+  0%{opacity:0;}
+  100%{opacity:.45;}
+}
+.animationWrapper{
+  position:fixed;
+  height:20vw;
+  width:30vw;
+  top:calc(50vh - 10vw);
+  left:calc(50vw - 15vw);
+  z-index:4;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.loadingCircle{
+  width:5vw;
+  height:5vw;
+  margin:0 auto;
+  animation: circleWave 2s cubic-bezier(.6,0,.3,1) infinite;
+  margin-top:15vw;
+}
+.animationDelay1{
+  animation-delay:.1s;
+}
+.animationDelay2{
+  animation-delay:.2s;
+}
+.animationDelay3{
+  animation-delay:.3s;
+}
+@keyframes circleWave {
+  0%{margin-top:15vw;}
+  50%{margin-top:0;}
+  100%{margin-top:15vw;}
+}
+/*interactive elems*/
+.navBoxWrapper{
+  position:fixed;
+  width:7vw;
+  height:7vw;
+  right:8vw;
+  top:8vw;
+  overflow:visible;
+  z-index:3;
+}
+.navBox{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  height:100%;
+  border-width:.2vw;
+  border-style:solid;
+  display:grid;
+  grid-template-rows:1fr 1fr 1fr;
+  padding:15% 15%;
+  border-radius:2vw;
+  transition:filter .5s;
+}
+.navLine{
+  height:.5vw;
+  margin:auto 0;
+}
+.navPage{
+  width:65%;
+  height:100vh;
+  border-top-right-radius:0;
+  border-bottom-right-radius:0;
+  position:fixed;
+  top:0;
+  right:0;
+  padding:5vw;
+  z-index:2;
+}
+.navWipeOnAnimation{
+  animation: navWipeOn .5s cubic-bezier(.5, 0, .5, 1);
+  animation-fill-mode: forwards;
+}
+.navWipeOffAnimation{
+  animation: navWipeOff .5s cubic-bezier(.5, 0, .5, 1);
+  animation-fill-mode: forwards;
+}
+@keyframes navWipeOn{
+  0%{
+    right:-75%;
+  }
+  100%{
+    right:0;
+  }
+}
+@keyframes navWipeOff{
+  0%{
+    right:0;
+  }
+  100%{
+    right:-75%;
+  }
+}
+.profileInfoWrapper{
+  display:grid;
+  height:15vw;
+  grid-template-columns: 25% 1fr;
+}
+.smallProfilePic{
+  height:inherit;
+  width:15vw;
+  background-color:grey;
+}
+.profileNameContainer{
+  display:grid;
+  height:80%;
+  margin:auto 0;
+  grid-template-rows:1fr 1fr;
+}
+.profileNamePreview{
+  margin:auto 0;
+  font-size:4vw;
+  font-weight:bold;
+}
+.profileStatusPreview{
+  margin:auto 0;
+  font-size:3vw;
+}
+.navPageOptionsContainer{
+  padding-top:5vw;
+  padding-left:4vw;
+}
+.navOptionText{
+  font-size:7vw;
+  margin-bottom:5vw;
+}
+.versionContainer{
+  position:absolute;
+  width:80%;
+  bottom:15vw;
+  left:10%;
+}
+.versionLine{
+  height:1vw;
+}
+.versionText{
+  margin-top:2vw;
+  font-size:3vw;
+  text-align:center;
+}
+.profileWrapper{
+  position: fixed;
+  bottom:-180vw;
+  left:0;
+  width:100vw;
+  height: 180vw;
+  animation: profilePageWipeUp .5s ease forwards;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+@keyframes profilePageWipeUp{
+  0%{bottom:-180vw;}
+  100%{bottom:0vw;}
+}
+@keyframes profilePageWipeUpi{
+  0%{bottom:0vw;}
+  100%{bottom:-180vw;}
+}
+.closeProfileButton{
+  width:50vw;
+  padding:2vw;
+  position: absolute;
+  bottom:15vw;
+  font-size:5vw;
+  left:50%;
+  transform: translateX(-50%);
+  text-align:center;
+}
+.dropDownArrow{
+
+}
+.arrowFin1{
+  width:60%;
+  height:15%;
+  position:absolute;
+  bottom:25%;
+  left:25%;
+}
+.arrowFin2{
+  width:15%;
+  height:60%;
+  position:absolute;
+  bottom:25%;
+  left:25%;
+}
+.rotate{
+  transform:rotateZ(-45deg);
+}
+.rotate2{
+  transform:rotateZ(45deg);
+}
+.backArrowWrapper{
+  display:none;
+  position:fixed;
+  width:7vw;
+  height:7vw;
+  left:8vw;
+  top:8vw;
+  overflow:visible;
+  z-index:3;
+}
+.backArrowBox{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  height:100%;
+  border-width:.2vw;
+  border-style:solid;
+  border-radius:2vw;
+  transition:filter .5s;
+}
+.arrowContainer{
+  width:100%;
+  height:100%;
+}
+.leftArrowFin1{
+  width:50%;
+  height:10%;
+  position:absolute;
+  bottom:32%;
+  left:32%;
+}
+.leftArrowFin2{
+  width:10%;
+  height:50%;
+  position:absolute;
+  bottom:32%;
+  left:32%;
+}
+.toggleSwitchContainer{
+  position:relative;
+  width:100%;
+  height:100%;
+}
+.toggleSwitch{
+  position:absolute;
+  width:50%;
+  height:100%;
+  transform:scale(1.05);
+}
+.toggleLeft{
+  left:0;
+}
+.toggleRight{
+  right:0;
+}
+.homeButtonWrapper{
+  position:fixed;
+  width:7vw;
+  height:7vw;
+  left:8vw;
+  top:8vw;
+  overflow:visible;
+  z-index:1;
+}
+.homeButton{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  height:100%;
+  border-width:.2vw;
+  border-style:solid;
+  padding:15% 15%;
+  border-radius:2vw;
+  transition:filter .5s;
+}
+.resetStyles{
+  border:none;
+  background-image:none;
+  background-color:transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  outline:none;
+  -webkit-appearance:none;
+}

@@ -1,0 +1,133 @@
+.header{
+  position:sticky;
+  top:0;
+  padding:5vw;
+  z-index:1;
+}
+.ministryButton{
+  width:20%;
+  display:grid;
+  grid-template-columns: 60% 22%;
+}
+.ministryText{
+  font-size:3vw;
+}
+.selectedMinistryText{
+  font-size:6vw;
+}
+.selectedServiceTypeText{
+  font-size:3.5vw;
+  margin-top:-1vw;
+}
+.recent{
+  padding:0 5vw;
+}
+.recentText{
+  margin-bottom:2vw;
+  font-size:4vw;
+}
+.recentBlock{
+  height:20vw;
+  display:grid;
+  grid-template-columns:30% 70%;
+  padding:4vw;
+}
+.seriesImgContainer{
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position:center;
+}
+.recentServiceText{
+  margin:1.5vw 0 1.5vw 2vw;
+  display:grid;
+  grid-template-rows:1fr 1fr 1fr;
+  position:relative;
+}
+.comingUp{
+  padding:5vw;
+}
+.comingUpText{
+  margin-bottom:3vw;
+  font-size:4vw;
+}
+.block{
+  padding:3vw;
+  height:15vw;
+  margin-bottom:5vw;
+}
+.serviceText{
+  display:grid;
+  grid-template-rows:1fr 1fr 1fr;
+  position:relative;
+  height:100%;
+}
+.seriesTitle{
+  font-size:3vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.serviceTitle{
+  font-size:5vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position:absolute;
+  top:calc(50% - 3.5vw);
+  width:97%;
+}
+.serviceDate{
+  font-size:3vw;
+  position:absolute;
+  bottom:0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ministrySelector{
+  overflow:scroll;
+  width:85vw;
+  height:80vh;
+  position:fixed;
+  top:10.5vw;
+  left:2.5vw;
+  z-index:4;
+  animation:wipeDown .5s;
+  animation-direction:forwards;
+  padding:5vw;
+}
+@keyframes wipeDown{
+  0%{top:0vw;opacity:0;}
+  100%{top:10.5vw;opacity:1;}
+}
+@keyframes wipeDownInv{
+  0%{top:10.5vw;opacity:1;}
+  100%{top:0vw;opacity:0;}
+}
+.ministryNameInMenu{
+  font-size:6vw;
+  margin:2.5vw 0;
+}
+.serviceTypeWrapper{
+  margin-top:-1vw;
+  margin-left:3vw;
+}
+.serviceTypeNameInMenu{
+  font-size:4vw;
+}
+@keyframes swipeInRight{
+  0%{left:100%}
+  100%{left:0;}
+}
+@keyframes swipeOutRight{
+  0%{left:0;}
+  100%{left:100%}
+}
+.playlistIframe{
+  animation:swipeInRight .5s;
+  animation-direction:forwards;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:2;
+}

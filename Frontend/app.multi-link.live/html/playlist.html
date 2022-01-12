@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Playlist Manager</title>
+    <script src = 'https://code.jquery.com/jquery-3.4.1.min.js' type = 'text/javascript'></script>
+    <link rel = 'stylesheet' href = '../styles/general.css'>
+    <link rel = 'stylesheet' href = '../styles/elems.css'>
+    <link rel = 'stylesheet' href = '../styles/playlist.css'>
+    <script src = '../scripts/config.js'></script>
+    <script src = '../scripts/domGen.js'></script>
+    <script src = '../scripts/controllers.js'></script>
+    <script src = '../scripts/playlist.js'></script>
+  </head>
+  <body>
+    <div class = 'nonScrollBody'>
+      <div class = 'mainInfoContainer'>
+        <div class = 'infoBoxWrapper curve1'>
+          <div class = 'infoBox'>
+            <div id = 'matrixButton' class = 'circle optionsButtons color4BG outerShadow clickable' onclick = 'openMatrix()'>
+                <svg xmlns="http://www.w3.org/2000/svg" class = 'scaleGridSVG' width="24" height="24" viewBox="0 0 24 24"><path d="M6 6h-6v-6h6v6zm9-6h-6v6h6v-6zm9 0h-6v6h6v-6zm-18 9h-6v6h6v-6zm9 0h-6v6h6v-6zm9 0h-6v6h6v-6zm-18 9h-6v6h6v-6zm9 0h-6v6h6v-6zm9 0h-6v6h6v-6z"/></svg>
+            </div>
+            <div id = 'manualConnectionPing' class = 'circle optionsButtons outerShadow clickable' onclick = 'disableConnectionCheck(this)'>
+                <svg xmlns="http://www.w3.org/2000/svg" class = 'scaleWirelessSVG' width="24" height="24" viewBox="0 0 24 24"><path d="M8.213 16.984c.97-1.028 2.308-1.664 3.787-1.664s2.817.636 3.787 1.664l-3.787 4.016-3.787-4.016zm-1.747-1.854c1.417-1.502 3.373-2.431 5.534-2.431s4.118.929 5.534 2.431l2.33-2.472c-2.012-2.134-4.793-3.454-7.864-3.454s-5.852 1.32-7.864 3.455l2.33 2.471zm-4.078-4.325c2.46-2.609 5.859-4.222 9.612-4.222s7.152 1.613 9.612 4.222l2.388-2.533c-3.071-3.257-7.313-5.272-12-5.272s-8.929 2.015-12 5.272l2.388 2.533z"/></svg>
+            </div>
+            <div class = 'infoContent outerShadow'></div>
+            <div class = 'progressWheelWrapper outerShadow'>
+              <svg viewBox="0 0 36 36"  class = 'progressWheel'>
+                <path
+                class = 'color2Strokelight circleThing'
+                stroke-dasharray="100, 100"
+                d="M18 2.0845
+                  a 15.9155 15.9155 0 0 1 0 31.831
+                  a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                <path
+                id = 'changingCircle'
+                class = 'color2Stroke circleThing'
+                stroke-dasharray="60, 100"
+                d="M18 2.0845
+                  a 15.9155 15.9155 0 0 1 0 31.831
+                  a 15.9155 15.9155 0 0 1 0 -31.831"/>
+              </svg>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class = 'devicesWrapper'></div>
+      </div>
+    </div>
+    <div class = 'playlistItemsWrapper'></div>
+    <div class = 'pageWrapper'></div>
+  </body>
+</html>

@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root{
+    --green: #93c47d;
+    --blue: #5fa8b3;
+    --red: #e95e63;
+    --orange: #de926a;
+    --purple: #542D9B;
+}
+* {
+    font-family: 'Roboto', sans-serif;
+    margin:0;
+    padding:0;
+    overscroll-behavior: none;
+}
+html{ 
+    scroll-behavior:smooth
+}
+.material-icons {
+    vertical-align: -.4rem;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color:var(--blue);
+    transition:color .5s ease;
+}
+
+.redButton {
+    background-color:var(--red)!important;
+}
+
+a:hover {
+    color:#6ec2cf;
+}
+
+a.noColor,
+a.noColor:hover  {
+    color:black;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 1 */
+    line-height: 1.15; /* 1 */
+    margin: 0; /* 2 */
+    border:none;
+    background-image:none;
+    background-color:transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.navWrapper {
+    position: static;
+    top:0;
+    left:0;
+    width:100%;
+}
+
+ul.nav {
+    font-size:1rem;
+    display:flex;
+    font-size:1rem;
+    align-items:center;
+    list-style:none;
+    padding:20px 40px;
+    flex-direction:row;
+    justify-content: space-between;
+    background-color:rgba(255,255,255,0);
+}
+
+ul.nav li {
+    width:fit-content;
+    height:min-content;
+    display:flex;
+    flex-direction: row;
+    place-items: center;
+    justify-content: space-between;
+}
+
+ul.nav li a {
+    margin:0;
+    color:black;
+    line-height:1.15;
+    padding: 10px 20px;
+    border:none;
+    border-radius:25px;
+    min-width:80px;
+    display:inline-block;
+    text-align:center;
+    text-decoration:none;
+    text-transform: uppercase;
+    font-weight:700;
+    cursor:pointer;
+    filter: drop-shadow(0 3px 2px rgba(0,0,0,0));
+    transition: all .15s ease-out;
+}
+
+ul.nav li a:hover,
+a.actionButton:hover,
+button:hover{
+    transform:translateY(-2px);
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,.15))
+}
+
+a.actionButton, button{
+    margin:0;
+    line-height:1.15;
+    padding: 10px 30px;
+    border:none;
+    border-radius:25px;
+    display:inline-block;
+    color:white!important;
+    text-align:center;
+    background-color:black;
+    text-decoration:none;
+    text-transform: uppercase;
+    font-weight:700;
+    cursor:pointer;
+    filter: drop-shadow(0 3px 2px rgba(0,0,0,0));
+    transition: all .15s ease-out;
+}
+
+li.logo {
+    min-width:20%;
+    max-height:calc(1rem*1.15+20px);
+}
+
+ul.nav li .doubleActionWrapper .actionButton{
+    margin-right:15px;
+}
+
+ul.nav li .profileButton{
+    width:40px;
+    height:40px;
+    padding:0;
+    margin-left:15px;
+}
+ul.nav li .profileButton img{
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+}
+ul.nav li .profileButton div{
+    display:none;
+}
+
+
+
+
+
+.getStartedWrapper{
+    position:fixed;
+    background-color:black;
+    width:35%;
+    min-width:250px;
+    height:100vh;
+    top:0;
+    right:0;
+    overflow-y: scroll;
+    text-align:right;
+    filter: drop-shadow(-1px 0 4px rgba(0,0,0,.25));
+    transition: transform .5s ease-in-out;
+    transform: translateX(100%);
+}
+.getStartedWrapper > * {
+    animation: fadeIn .5s ease-out reverse forwards;
+}
+.getStartedWrapper button.exitButton {
+    padding:0;
+    margin:15px;
+    height:2rem;
+    width:2rem;
+    font-size:2rem;
+    border-radius: 0;
+    background-color: rgba(0,0,0,0);
+}
+.getStartedWrapper button.exitButton span {
+    background-color: rgba(0,0,0,0);
+    padding:0;
+    margin:0;
+    vertical-align: 0;
+}
+.getStartedWrapper div.formsWrapper {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height:50%;
+    min-height:500px;
+    gap:50px;
+    margin:20px 0;
+}
+.getStartedWrapper form {
+    height:200px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.getStartedWrapper form label {
+    color:white;
+    font-size:1.5rem;
+    font-weight:200;
+}
+.getStartedWrapper form input {
+    text-align:center;
+    padding:10px;
+    color:white;
+}
+.getStartedWrapper form input::placeholder {
+    text-align:center;
+}
+.getStartedWrapper form button {
+    font-size:.8rem;
+}
+
+#logIn button{
+    background-color:var(--orange);
+}
+#signUp button{
+    background-color:var(--purple);
+}
+
+
+
+.getStartedWrapper.show {
+    transform: translateX(0);
+}
+
+.getStartedWrapper > *.show {
+    animation: fadeIn .5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity:0;
+        display:none;
+    }
+    1% {
+        display:block;
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity:1;
+    }
+    1% {
+        opacity:0;
+    }
+    100% {
+        opacity:0;
+        display:none;
+    }
+}
+
+.errorBanner.show{
+    display:flex;
+}
+.errorBanner{
+    position: relative;
+    padding:5px;
+    color:white;
+    background-color: var(--red);
+    display:none;
+    flex-direction:row;
+    justify-content: space-between;
+    font-size:.5rem;
+    overflow:hidden;
+    transition:transform 3s ease-in-out;
+}
+.errorBanner .messagesWrapper{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+}
+.errorBanner button{
+    width:1rem;
+    height:1rem;
+    padding:0px;
+    background-color:rgba(0,0,0,0);
+}
+.errorBanner button span{
+    vertical-align: 0rem;
+    font-size:1rem;
+}
+
+.mobileMenuButton{
+    padding:0;
+    display:none;
+    position: absolute;
+    top:15px;
+    right:15px;
+    height:60px;
+    width:60px;
+    border-radius:0;
+    background-color:rgba(0,0,0,0);
+}
+.mobileMenuButton span {
+    vertical-align: 0;
+    color:black;
+    font-size:2.5rem;
+}
+.mobileLogo{
+    display:none;
+    position: absolute;
+    top:15px;
+    left:15px;
+    height:80px;
+    width:80px;
+}
+.mobileMenuButtonClose{
+    padding:0;
+    display:none;
+    position: absolute;
+    top:15px;
+    right:15px;
+    height:60px;
+    width:60px;
+    border-radius:0;
+    background-color:rgba(0,0,0,0);
+}
+.mobileMenuButtonClose span {
+    vertical-align: 0;
+    color:white;
+    font-size:2.5rem;
+}
+
+
+
+
+@media only screen and (max-width: 1250px) {
+    ul.nav {
+        font-size:.65rem;
+    }
+    ul.nav li a.actionButton{
+        min-width: unset;
+        max-width: 50px;
+    }
+    ul.nav li .profileButton,
+    ul.nav li .profileButton img{
+        height:32px;
+        width:32px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .navWrapper {
+        height:calc(100vh);
+        background-color:black;
+        animation: fadeIn .5s ease-out reverse forwards;
+        display:none;
+        position: fixed;
+        align-items: center;
+    }
+    .navWrapper.show {
+        display:grid;
+        animation: fadeIn .5s ease-out forwards;
+    }
+    ul.nav {
+        font-size:1.75rem;
+        align-items:flex-start;
+        flex-direction: column;
+        height:80%;
+    }
+    ul.nav li.doubleActionWrapper{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width:100%;
+    }
+    ul.nav li .doubleActionWrapper .actionButton{
+        margin-right:0;
+    }
+    
+    ul.nav li .profileButton{
+        margin-left:0;
+        height:52px;
+        padding:10px 50px 10px 0;
+        background-color:var(--orange);
+        width:fit-content;
+        display:flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items:center;
+        flex-wrap:nowrap;
+    }
+    ul.nav li .profileButton img{
+        width:52px;
+        height:52px;
+        margin-right:20px;
+    }
+    ul.nav li .profileButton div{
+        display:block;
+    }
+    ul.nav li a {
+        color:white;
+        text-align: left;
+    }
+    ul.nav li a.actionButton, button {
+        padding-left:50px;
+        padding-right:50px;
+        background-color: var(--blue);
+        max-width: unset;
+        min-width: 80px;
+    }
+    li.logo {
+        display:none!important;
+    }
+    .mobileLogo, .mobileMenuButton{
+        display:block;
+    }
+    .mobileMenuButtonClose{
+        display:block;
+    }
+    a.actionButton, button{
+        background-color:rgba(0,0,0,0);
+    }
+    .getStartedWrapper{
+        width:100%;
+        background-color:rgba(0,0,0,.85);
+    }
+    .getStartedWrapper button.exitButton {
+        height:60px;
+        width:60px;
+    }
+    .getStartedWrapper button.exitButton span {
+        font-size:2.5rem;
+    }
+    .getStartedWrapper div.formsWrapper {
+        height:80%;
+    }
+    .getStartedWrapper form {
+        height:400px;
+    }
+    
+    .getStartedWrapper form label {
+        font-size:2rem;
+    }
+    .getStartedWrapper form input {
+        font-size:1.5rem
+    }
+    .getStartedWrapper form button {
+        font-size:1.25rem;
+    }
+}

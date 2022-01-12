@@ -1,0 +1,704 @@
+.nonScrollBody{
+  position:fixed;
+  width:100vw;
+  overscroll-behavior-y: none;
+}
+.header{
+  text-align:center;
+  padding:5vw 0;
+  font-size:5vw;
+}
+.infoBoxWrapper{
+  overflow:hidden;
+  height:75vw;
+  width:90vw;
+  margin:0 auto;
+  margin-top:5vw;
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position:center;
+}
+.infoBox{
+  background-image:linear-gradient(to top, rgba(0,0,0,.5), rgba(0,0,0,0) 50%);
+  width:100%;
+  height:100%;
+  position:relative;
+}
+.infoDate{
+  font-size:8vw;
+  line-height:100%;
+  margin:4vw 0;
+}
+.infoServiceType{
+  font-size:3vw;
+}
+
+#manualConnectionPing{
+  position: absolute;
+  right:5vw;
+  bottom:25vw;
+  transition: background-color 1s ease;
+}
+@keyframes pinging{
+  0%{background-color:#696969}
+  50%{background-color:#d1be8a}
+  100%{background-color:#696969}
+}
+#matrixButton{
+  position: absolute;
+  right:5vw;
+  bottom:15vw;
+}
+.matrixButtonExpandToContainer{
+  animation:scaleUpMatrix .5s cubic-bezier(0,.54,.21,.96) forwards;
+  position: fixed;
+  right:11.5vw;
+  top:58.5vw;
+  width:0%;
+  height:0%;
+}
+.matrixContainer{
+  height:100vh;
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  opacity: 0;
+}
+.matrixHeader{
+  font-size:8vw;
+  margin-top:10vw;
+  text-align: center;
+}
+@keyframes scaleUpMatrix{
+  0%{
+    width:0vw;
+    height:0vw;
+    right:13vw;
+    top:60vw;
+  }
+  100%{
+    width:120%;
+    height:120%;
+    right:-10%;
+    top:-10%;
+  }
+}
+@keyframes scaleUpMatrixi{
+  0%{
+    width:120%;
+    height:120%;
+    right:-10%;
+    top:-10%;
+  }
+  100%{
+    width:0vw;
+    height:0vw;
+    right:13vw;
+    top:60vw;
+  }
+}
+@keyframes fadeTextUp{
+  0%{opacity:0;}
+  100%{opacity:1;}
+}
+@keyframes fadeTextUpi{
+  0%{opacity:1;}
+  100%{opacity:0;}
+}
+.matrixContianerExitButton{
+  font-size:4vw;
+  text-align:center;
+  position: fixed;
+  right:5vw;
+  bottom:5vw;
+  width:12vw;
+  height:12vw;
+  animation: fadeTextUp .5s ease forwards;
+}
+.matrixExitButtonLine{
+  position: absolute;
+  left:50%;
+  top:50%;
+  width:1vw;
+  height:60%;
+  border-radius:20vw;
+}
+.matrixEditPanel{
+  position: fixed;
+  top:30vw;
+  left:0;
+  width:100%;
+  display:grid;
+  grid-template-areas:'itemSelect itemSelect'
+                      'itemId pageSelect'
+                      'devices devices';
+  grid-gap:5vw;
+}
+.matrixEditItemWrapper{
+  margin:0 10vw;
+  height:20vw;
+  grid-area:itemSelect;
+  text-align: center;
+}
+.matrixEditItemSelect{
+  font-size:5vw;
+  text-transform: capitalize;
+  width:100%;
+  height:100%;
+  opacity: 0;
+}
+.matrixEditItemSelectText{
+  position: absolute;
+  top:50%;
+  left:50%;
+  font-size:5vw;
+  width:100%;
+  text-transform: capitalize;
+  transform:translate(-50%,-50%);
+}
+
+.matrixEditItemId{
+  margin-left:10vw;
+  height:20vw;
+  grid-area:itemId;
+  font-size:5vw;
+  width:37vw;
+  display:grid;
+  place-items:center;
+}
+
+.matrixEditPageWrapper{
+  margin-right:10vw;
+  height:20vw;
+  width:37vw;
+  grid-area:pageSelect;
+  text-align: center;
+}
+.matrixEditPageSelect{
+  font-size:5vw;
+  text-transform: uppercase;
+  width:100%;
+  height:100%;
+  opacity: 0;
+}
+.matrixEditPageText{
+  position: absolute;
+  top:50%;
+  left:50%;
+  font-size:5vw;
+  width:100%;
+  text-transform: uppercase;
+  transform:translate(-50%,-50%);
+}
+
+
+
+.matrixEditDeviceWrapper{
+  grid-area:devices;
+  width:auto;
+  overflow-x: scroll;
+  overflow-y: visible;
+  display:grid;
+  grid-template-columns: 36.5vw 36.5vw 36.5vw 36.5vw 36.5vw 36.5vw 36.5vw 36.5vw 36.5vw 36.5vw 36.5vw 36.5vw;
+  grid-gap:6vw;
+  height:70vw;
+  padding: 0 10vw;
+}
+.matrixEditDeviceContainer{
+  position: relative;
+  width:36.5vw;
+  height:50vw;
+}
+.matrixEditDeviceIconWrapper{
+  margin:3vw auto;
+  border-width:1vw;
+  border-style:solid;
+  border-radius: 5vw;
+  background-color:transparent;
+  width:18vw!important;
+  height:18vw!important;
+  display:grid;
+  place-items:center;
+}
+.matrixEditDeviceText{
+  font-size:3vw;
+  text-align:center;
+}
+.matrixEditDeviceSubText{
+  font-size:1.75vw;
+  text-transform: uppercase;
+  text-align:center;
+}
+.matrixEditDeviceRowButton{
+  height:15vw;
+  width:100%;
+  margin-top:5vw;
+  position: relative;
+  text-align:center;
+  border:none;
+}
+.matrixEditDeviceRowButtonSelect{
+  width:100%;
+  height:inherit;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  background-color:transparent;
+  opacity: 0;
+}
+.matrixEditDeviceRowButtonText{
+  width:100%;
+  height:100%;
+  text-align:center;
+  font-size:5vw;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  display: grid;
+  place-items:center;
+}
+
+.optionsButtons{
+  width:8vw;
+  height:8vw;
+  display: grid;
+  place-items:center;
+}
+.scaleWirelessSVG{
+  width:40%;
+  height:40%;
+  fill:white;
+}
+.scaleGridSVG{
+  width:40%;
+  height:40%;
+  fill:white;
+}
+.infoContent{
+  position:absolute;
+  bottom:5vw;
+  left:5vw;
+  width:40vw;
+}
+.progressWheelWrapper{
+  position:absolute;
+  bottom:5.5vw;
+  right:5.5vw;
+  width:7.5vw;
+  height:7.5vw;
+  overflow:visible;
+}
+.progressWheel{
+  width:100%;
+  height:100%;
+  overflow: inherit;
+}
+.circleThing{
+  fill: none;
+  stroke-width: 6;
+  stroke-linecap: round;
+  width:100%;
+  height:100%;
+}
+.devicesWrapper{
+  margin-top:7vw;
+  height:auto;
+}
+.roomSelector{
+  margin-left: 5vw;
+  position:relative;
+  width:100%;
+}
+.roomSelect{
+  display:inline;
+  font-size:6vw;
+  max-width:50vw;
+  text-transform: none;
+}
+.devicesText{
+  display:inline;
+  padding-left:1vw;
+  font-size:6vw;
+  text-transform: none;
+}
+.roomSelectionMenu{
+  position: fixed;
+  max-height:50vw;
+  width:80vw;
+  z-index:2;
+  left:5vw;
+  top:96vw;
+  overflow: scroll;
+  padding:3vw 5vw;
+}
+.roomSelectionText{
+  font-size:6vw;
+  margin:2vw 0;
+}
+.noCaps{
+  text-transform: none;
+}
+.editRoomsButtonWrapper{
+  position:absolute;
+  right:5vw;
+  width:22vw;
+  top:0;
+  height:100%;
+  display:grid;
+  place-items:center;
+}
+.editRoomsButton{
+  height:4vw;
+  width:8vw;
+  margin:auto;
+  padding: 1vw 2vw;
+  text-align:center;
+  font-size:3vw;
+}
+.editPane{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  width:85vw;
+  height:120vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  animation:wipeUp .5s ease;
+  animation-direction: forwards;
+  z-index:3;
+}
+@keyframes swipeRight{
+  0%{left:0;}
+  100%{left:90vw;}
+}
+@keyframes swipeRighti{
+  0%{left:90vw;}
+  100%{left:0vw;}
+}
+@keyframes wipeUp{
+  0%{top:80%;opacity:0;}
+  100%{top:50%;opacity:1;}
+}
+@keyframes wipeUpi{
+  0%{top:50%;opacity:1;}
+  100%{top:80%;opacity:0;}
+}
+@keyframes wipeToEdge{
+  0%{left:0;}
+  100%{left:83%;}
+}
+@keyframes wipeToEdgei{
+  0%{left:83%;}
+  100%{left:0vw;}
+}
+.editPaneHeader{
+  font-size:5vw;
+  text-align: center;
+  margin-top: 4vw;
+  position: relative;
+}
+.createRoomButton{
+  text-align:center;
+  padding:2vw 0;
+  width: 75%;
+  margin: 5vw auto;
+  position: relative;
+}
+.editorRoom{
+  width:70%;
+  margin:0 auto;
+  padding:2vw 3vw;
+  margin-top:5vw;
+  position: relative;
+}
+.editorRoomName{
+  font-size:4vw;
+  min-width:20vw;
+}
+.editorRoomIp{
+  font-style: italic;
+  font-size:2.5vw;
+}
+.editorRemove{
+  display:grid;
+  place-items:center;
+  width:6vw;
+  height:6vw;
+  grid-column: row2;
+}
+.editorRemoveLine{
+  width:60%;
+  height:.75vw;
+  border-radius:40vw;
+}
+.editorEdit{
+  display:grid;
+  place-items:center;
+  width:6vw;
+  height:6vw;
+  grid-column: row1;
+}
+.scaleDown{
+  width:50%;
+  height:50%;
+}
+.editorButtonWrapper{
+  position: absolute;
+  bottom:2vw;
+  right:2vw;
+  display:grid;
+  grid-template-columns:1fr [row1] 1fr [row2];
+  column-gap:1vw;
+}
+.roomDeviceEditor{
+  left:-100%;
+  top:0%;
+  position: absolute;
+  width:100%;
+  padding-bottom:10vw;
+}
+.roomDeviceEditorName{
+  margin:5vw auto;
+  font-size:5vw;
+  text-align: center;
+}
+.roomDeviceEditorDeviceBox{
+  width:70%;
+  margin:0 auto;
+  margin-bottom:5vw;
+  display:grid;
+  position: relative;
+  padding:3vw;
+  grid-template-columns: [devicePicture] 33%  [deviceTextArea] 1fr ;
+}
+.roomDeviceEditorDevicePicture{
+  grid-column: devicePicture;
+  width:18vw;
+  height:18vw;
+  display:grid;
+  place-items:center;
+}
+.roomDeviceEditorTextArea{
+  grid-column: deviceTextArea;
+}
+.editBackButton{
+  position: absolute;
+  top:5vw;
+  right:5vw;
+  width:5vw;
+  height:5vw;
+  transform: rotate(180deg);
+}
+.deviceNameEdit{
+  font-size:4vw;
+  width:80%;
+}
+.deviceTypeEdit{
+  font-size:2.5vw;
+}
+.deviceIdEdit{
+  position:absolute;
+  bottom:2vw;
+  right:2vw;
+  font-size:3vw;
+  padding:2vw;
+  width:4vw;
+  height:4vw;
+  text-align: center;
+}
+.roomDeviceEditorRemove{
+  position:absolute;
+  width:7vw;
+  height:7vw;
+  top:0;
+  right:0;
+  display:grid;
+  place-items:center;
+  transform:translate(25%,-25%);
+}
+@keyframes deviceEditorWipeIn{
+  0%{left:-100%;}
+  100%{left:0%;}
+}
+@keyframes deviceEditorWipeIni{
+  0%{left:0%;}
+  100%{left:-100%;}
+}
+.createNewDeviceButton{
+  font-size:4vw;
+  width:80%;
+  margin:0 auto;
+  padding:2vw;
+  text-align:center;
+}
+
+
+
+
+
+
+.devicesContainer{
+  overflow: scroll;
+  margin-top:2vw;
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+.devicesScrollWrapper{
+  margin:0 2vw;
+  overflow: visible;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.deviceBoxContainer{
+  width:18vw;
+  padding:0 3vw;
+  padding-top:1vw;
+}
+.deviceBox{
+  width:18vw;
+  height:18vw;
+  border-radius:5vw;
+  filter:drop-shadow(0 0 .5vw rgba(0,0,0,.05));
+  display:grid;
+  place-items:center;
+}
+.computer{
+
+}
+.console{
+
+}
+.video{
+
+}
+.scale3{
+  transform:scale(3);
+}
+.sizer{
+  width:inherit;
+  height:inherit;
+  position: relative;
+}
+.reAlign{
+ position:absolute;
+ transform: translate(-50%, -50%);
+}
+.horizontalLine{
+  position:absolute;
+  height:1vw;
+}
+.verticalLine{
+  position:absolute;
+  width:1vw;
+}
+.horizontalLine2{
+  height:1.5vw;
+}
+.verticalLine2{
+  width:1.5vw;
+}
+.plusButton1{
+  top:50%;
+  left:50%;
+  width:10vw;
+}
+.plusButton2{
+  top:50%;
+  left:50%;
+  height:10vw;
+}
+.deviceName{
+  margin-top:1.5vw;
+  text-align:center;
+  font-size:2.5vw;
+  margin:auto;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width:16vw;
+  display: block;
+  overflow: hidden;
+}
+.disabledDevice{
+}
+.disabledColor{
+  background-color:rgb(150,150,150);
+  border: 0px solid rgb(150,150,150);
+}
+.disabledColori{
+  background-color:rgb(200,200,200);
+  border: 0px solid rgb(200,200,200);
+}
+
+
+
+
+.playlistItemsWrapper{
+  width:100%;
+  position:relative;
+  top:125vw;
+  border-top-left-radius: 7vw;
+  border-top-right-radius: 7vw;
+  padding:10vw 0;
+}
+.playlistItem{
+  width:84vw;
+  display:grid;
+  grid-template-areas:'circle circle itemText itemText itemText itemText itemText itemText'
+                      'circle circle itemText itemText itemText itemText itemText itemText'
+                      'circle circle itemText itemText itemText itemText itemText itemText'
+                      'circle circle itemTime itemTime itemTime itemTime itemTime itemTime'
+                      'circle circle itemTime itemTime itemTime itemTime itemTime itemTime';
+  margin:0 auto;
+  margin-bottom:8vw;
+  padding:5vw 0;
+  padding-left:1vw;
+}
+.playlistItemNullNode{
+  width:84vw;
+  display:grid;
+  grid-template-areas:'circle circle itemText itemText itemText itemText itemText itemText'
+                      'circle circle itemText itemText itemText itemText itemText itemText'
+                      'circle circle itemText itemText itemText itemText itemText itemText'
+                      'circle circle itemTime itemTime itemTime itemTime itemTime itemTime'
+                      'circle circle itemTime itemTime itemTime itemTime itemTime itemTime';
+  margin:0 auto;
+  margin-bottom:8vw;
+  padding:2vw 0;
+  padding-left:1vw;
+}
+.playlistItemCircle{
+  grid-area:circle;
+  width:8vw;
+  height:8vw;
+  margin:auto 2vw;
+  overflow: visible;
+}
+.playlistItemName{
+  grid-area:itemText;
+  font-size:4vw;
+}
+.playlistItemNameNullNode{
+  grid-area:itemText;
+  font-size:6vw;
+  margin-top:.35vw;
+  margin-left:-16vw;
+}
+.playlistItemLength{
+  grid-area:itemTime;
+  font-size:3vw;
+  display:grid;
+  grid-template-columns:5% 95%;
+  height:4vw;
+}
+.clockWrapper{
+  position: relative;
+  width:100%;
+  height:100%;
+}

@@ -1,0 +1,105 @@
+.settingsHeader{
+  font-size:7vw;
+  margin:7vw 0;
+  text-align: center;
+}
+.settingWrapper{
+  position: relative;
+  height: 10vw;
+  width:80%;
+  margin:3vw auto;
+}
+.settingsText{
+  font-size:5vw;
+  position: absolute;
+  left:0;
+  top:50%;
+  transform:translateY(-50%);
+  padding:1vw;
+  width:70%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.infoCard{
+  font-size:3vw;
+  width:4vw;
+  height:4vw;
+  display:grid;
+  place-items:center;
+  margin-left:1vw;
+}
+.controller{
+  position: absolute;
+  right:0;
+  display:grid;
+  place-items:center;
+  height:100%;
+  font-size:2vw;
+}
+.toggle{
+  position: relative;
+  width:11.6vw;
+  height:58%;
+}
+.toggleBody{
+  width:100%;
+  height:100%;
+  position: absolute;
+  right:0;
+  top:50%;
+  transform: translateY(-50%);
+}
+.toggleMarker{
+  position: absolute;
+  right:0;
+  top:50%;
+  transform: translate(0, -50%) scale(1.2);
+  width:50%;
+  height:100%;
+  z-index:1;
+}
+.select{
+  position: relative;
+  width:25vw;
+  height:70%;
+}
+.selectBody{
+  width:100%;
+  height:100%;
+  position: absolute;
+  right:0;
+  top:50%;
+  transform:translateY(-50%);
+  color:rgba(0,0,0,0);
+}
+.selectMarker{
+  width:100%;
+  height:100%;
+  position: absolute;
+  right:0;
+  top:50%;
+  transform:translateY(-50%);
+  display:grid;
+  place-items:center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.button{
+  width:25vw;
+  height:70%;
+}
+.buttonBody{
+  width:100%;
+  height:100%;
+  display:grid;
+  place-items:center;
+}
+@keyframes warning{
+  0%{opacity:1;}
+  50%{opacity:.5;}
+  100%{opacity:1;}
+}
