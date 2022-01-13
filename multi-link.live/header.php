@@ -71,7 +71,7 @@
             if ($db_id_exists) {
                 echo "
                 <li class = 'doubleActionWrapper'>
-                    <a href='" . $ROOT . "../app.multi-link.live/index.php' class = 'actionButton' >LAUNCH</a>
+                    <a href='" . $ROOT . "/../app.multi-link.live/index.php' class = 'actionButton' >LAUNCH</a>
                     <button class = 'profileButton'>
                         <div>ACCOUNT</div>
                         <img src=" . '"' . $_SESSION['user_profile_photo_URL_thumbnail'] . '"' . " alt='cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'>
