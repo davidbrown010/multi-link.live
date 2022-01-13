@@ -81,7 +81,7 @@
 
 
 
-            $url = 'http://' . $NODE_DOMAIN . '/users';
+            $url = $NODE_DOMAIN . '/users';
             $ch = curl_init();
 
             $data_array = array(

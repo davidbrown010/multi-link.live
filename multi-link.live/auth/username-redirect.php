@@ -16,7 +16,7 @@
         if (isset($_POST['submit'])){
             $_SESSION['login_username'] = $_POST['uName'];
 
-            $url = 'http://' . $NODE_DOMAIN . '/auth/login-redirect?redirect=' . $PHP_DOMAIN . '/multi-link.live/auth/login-redirect.php';
+            $url = $NODE_DOMAIN . '/auth/login-redirect?redirect=' . $PHP_DOMAIN . '/multi-link.live/auth/login-redirect.php';
             $ch = curl_init();
 
             curl_setopt($ch, CURLOPT_URL, $url);
