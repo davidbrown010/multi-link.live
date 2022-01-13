@@ -23,7 +23,7 @@ if ($e = curl_error($ch)) {
         exit;
     }
     
-
+    $_SESSION['decoded'] = $decoded;
     $_SESSION['user_PCO_id'] = $decoded -> userPCO_Id;
     $_SESSION['user_username'] = $decoded -> username;
     $_SESSION['user_first_name'] = $decoded -> firstName;
