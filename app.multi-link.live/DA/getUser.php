@@ -5,7 +5,7 @@ $ch = curl_init();
 $url = $NODE_DOMAIN . '/users';
 
 $params = array('userId' => $_SESSION['db_id']);
-//server isn't receiving userId
+
 curl_setopt($ch, CURLOPT_URL, $url . '?' . http_build_query($params));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
@@ -17,7 +17,7 @@ if ($e = curl_error($ch)) {
     exit;
 } else {
     $decoded = json_decode($resp);
-    
+    print_r($decoded);
     if (isset($decoded->message)) {
         header('location: ' . $ROOT . '/multi-link.live/pages/signIn.php?e=serverErrorEmptyRequest');
         exit;
