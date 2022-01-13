@@ -26,19 +26,21 @@
             $resp = curl_exec($ch);
             $decoded = json_decode($resp);
 
+            print_r($decoded);
+            /*
             if ($e = curl_error($ch)) {
                 echo $e;
                 header('location: ../pages/signIn.php?e=' . $e);
                 exit;
             }
             else if ($decoded->redirectLink == null){
-                header('location: ../pages/signIn.php?e=' . $decoded);
+                header('location: ../pages/signIn.php?e=noRedirectRecieved');
                 exit;
             }
             else {
                 header("Location: " . $decoded->redirectLink);
                 exit;
-            }
+            }*/
             
             curl_close($ch);
             echo "success";
