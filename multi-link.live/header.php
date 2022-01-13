@@ -4,7 +4,7 @@
         if (!isset($_SESSION['user_first_name'])){
             session_unset();
             session_destroy();
-            header('location: ./index.php?e=failedToGetUserData');
+            header('location: ' . $ROOT . '/index.php?e=failedToGetUserData');
             exit;
         }
     }
@@ -17,12 +17,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multi-Link</title>
-    <link rel="stylesheet" href="./multi-link.live/styles/styles.css">
+    <link rel="stylesheet" href="<?php echo $ROOT?>/styles/styles.css">
+    <script src = '<?php echo $ROOT?>/js/animations.js'></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 </head>
 <body>
-    <script src = 'js/animations.js'></script>
+    
         <?php
             $db_id_exists = isset($_SESSION['db_id']);
             if (!$db_id_exists) { session_unset(); session_destroy(); }
@@ -70,7 +71,7 @@
             if ($db_id_exists) {
                 echo "
                 <li class = 'doubleActionWrapper'>
-                    <a href='../app.multi-link.live/index.php' class = 'actionButton' >LAUNCH</a>
+                    <a href='" . $ROOT . "../app.multi-link.live/index.php' class = 'actionButton' >LAUNCH</a>
                     <button class = 'profileButton'>
                         <div>ACCOUNT</div>
                         <img src=" . '"' . $_SESSION['user_profile_photo_URL_thumbnail'] . '"' . " alt='cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'>
@@ -84,27 +85,10 @@
             else {
                 echo "
                 <li>
-                    <button onclick='show(" . '["getStartedWrapper", "exitButton", "formsWrapper"]' . ")'>GET STARTED</button>
+                <a href='" . $ROOT . "/pages/signIn.php'>GET STARTED</a>
                 </li>
             </ul>
-            </section>
-            <div class = 'getStartedWrapper'>
-                <button class = 'exitButton' onclick='hide(" . '["getStartedWrapper", "exitButton", "formsWrapper"]' . ")'>
-                    <span class = 'material-icons'>arrow_forward_ios</span>
-                </button>
-                <div class = 'formsWrapper'>
-                    <form id = 'logIn' action='./auth/username-redirect.php' method='post'>
-                        <label>Log In.</label>
-                        <input required='required' type='text' name='uName' placeholder='Enter your username'>
-                        <button type='submit' name='submit'>LOG IN</button>
-                    </form>
-                    <form id = 'signUp' action='./auth/register-redirect.php' method='post'>
-                        <label>Sign Up.</label>
-                        <input required='required' type='text' name='username' placeholder='Create your username'>
-                        <button type='submit' name='submit'>REGISTER</button>
-                    </form>
-                </div>
-            </div>";
+            </section>";
             }
         ?>
         

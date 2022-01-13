@@ -1,7 +1,8 @@
 <?php
-    include_once './multi-link.live/header.php'
+    $ROOT = './multi-link.live';
+    include_once $ROOT . '/header.php';
 ?>
-<link href='./multi-link.live/styles/index.css' rel='stylesheet'/>
+<link href="<?php echo $ROOT . '/styles/index.css'?>" rel='stylesheet'/>
 
 <section class='heroSection'>
 
@@ -27,5 +28,5 @@
         
 
 <?php
-    include_once './multi-link.live/footer.php'
+    include_once $ROOT . '/footer.php';
 ?>
