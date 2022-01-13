@@ -1,6 +1,6 @@
 <?php 
     session_start();
-
+    include_once '/domain.php';
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +16,7 @@
         if (isset($_POST['submit'])){
             $_SESSION['login_username'] = $_POST['uName'];
 
-            $url = 'http://localhost:3000/auth/login-redirect';
+            $url = 'http://' . $NODE_DOMAIN . '/auth/login-redirect';
             $ch = curl_init();
 
             curl_setopt($ch, CURLOPT_URL, $url);
@@ -26,6 +26,8 @@
             $resp = curl_exec($ch);
             if ($e = curl_error($ch)) {
                 echo $e;
+                header('location: ../pages/signIn.php?e=couldNotReachBackend');
+                exit;
             } else {
                 $decoded = json_decode($resp);
                 header("Location: " . $decoded->redirectLink);
@@ -36,7 +38,8 @@
             echo "success";
         }
         else {
-            echo "error";
+            header('location: ../pages/signIn.php?e=formSubmissionError');
+            exit;
         }
     ?>
 </body>

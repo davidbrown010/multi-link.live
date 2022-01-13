@@ -85,7 +85,7 @@
             else {
                 echo "
                 <li>
-                <a href='" . $ROOT . "/pages/signIn.php'>GET STARTED</a>
+                <a href='" . $ROOT . "/pages/signIn.php' class = 'actionButton'>GET STARTED</a>
                 </li>
             </ul>
             </section>";

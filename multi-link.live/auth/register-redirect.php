@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include_once '/domain.php';
 ?>
 
 <!DOCTYPE html>
@@ -16,14 +17,14 @@
     //handles post request submitting username
     if (!isset($_SESSION['login_username'])){
         if (!isset($_POST['username'])){
-            header("location: ./index.php?e=noUsername");
+            header("location: ../pages/signIn.php?e=noUsername");
             exit;
         }
         
         $_SESSION['login_username'] = $_POST['username'];
 
         $ch = curl_init();
-        $url = 'http://localhost:3000/auth/auth-redirect';
+        $url = $NODE_DOMAIN . '/auth/auth-redirect?redirct=' . $PHP_DOMAIN . '/multi-link.live/auth/login-redirect.php';
 
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -32,7 +33,7 @@
 
         if ($e = curl_error($ch)) {
             curl_close($ch);
-            header('location: ./index.php?e=serverError');
+            header('location: ../pages/signIn.php?e=serverError');
             exit;
         } else {
             $decoded = json_decode($resp);
@@ -67,11 +68,11 @@
 
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         if ($e = curl_error($ch)) {
-            header("location: ./index.php?e=error");
+            header("location: ../pages/signIn.php?e=error");
             exit;
         }
         else if ($httpCode == 401){
-            header("location: ./index.php?e=pcoAuth&code=" . $_GET['code']);
+            header("location: ../pages/signIn.php?e=pcoAuth&code=" . $_GET['code']);
             exit;
         }
         else {
@@ -80,7 +81,7 @@
 
 
 
-            $url = 'http://localhost:3000/users';
+            $url = 'http://' . $NODE_DOMAIN . '/users';
             $ch = curl_init();
 
             $data_array = array(
@@ -101,7 +102,7 @@
             $resp = curl_exec($ch);
 
             if ($e = curl_error($ch)) {
-                header('Location: ./index.php?e=serverError');
+                header('Location: ../pages/signIn.php?e=serverError');
                 exit;
             }
             else {
@@ -116,28 +117,28 @@
 
                 catch (exception $e) {
                     if ($decoded->message) {
-                        header('location: ./index.php?e=' . $decoded->message . '&d=' . implode(",", $decoded->details));
+                        header('location: ../pages/signIn.php?e=' . $decoded->message . '&d=' . implode(",", $decoded->details));
                         exit;
                     }
                     else if ($decoded->warning) {
-                        header('location: ./app.multi-link.live/index.php?w=' . $decoded->warning);
+                        header('location: ../../app.multi-link.live/index.php?w=' . $decoded->warning);
                         exit;
                     }
                     else {
-                        header("Location: ./index.php?e=nullId");
+                        header("Location: ../pages/signIn.php?e=nullId");
                         exit;
                     }
                 }
                 
     
-                header("Location: ./app.multi-link.live/index.php");
+                header("Location: ../../app.multi-link.live/index.php");
                 exit;
             }
             curl_close($ch);
         }
     }
     else {
-        header('location: ../index.php?e=noUsername');
+        header('location: ../pages/signIn.php?e=noUsername');
         exit;
     }
     
