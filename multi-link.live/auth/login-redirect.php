@@ -34,12 +34,12 @@
             
             $_SESSION['db_id'] = $decoded->_id;
             unset($_SESSION['login_username']);
-            //header("Location: ../../app.multi-link.live/index.php");
-            //exit;
+            header("Location: ../../app.multi-link.live/index.php");
+            exit;
         } catch (execption $e) {
             echo 'unableToAccessBackend';
-            //header('location: ../pages/signIn.php?e=unableToAccessBackend');
-            //exit;
+            header('location: ../pages/signIn.php?e=unableToAccessBackend');
+            exit;
         }
         
     }

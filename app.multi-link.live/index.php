@@ -17,7 +17,7 @@
         header('location: ../index.php?e=loginFailed');
         exit;
     }
-
+    $ROOT = '..';
     include_once './DA/getUser.php';
 
     print_r($_SESSION);

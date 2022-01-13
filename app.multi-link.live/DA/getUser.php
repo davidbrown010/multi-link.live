@@ -1,7 +1,8 @@
 <?php
+include_once '../../multi-link.live/auth/domain.php';
 
 $ch = curl_init();
-$url = 'http://localhost:3000/users';
+$url = $NODE_DOMAIN . '/users';
 
 $params = array('userId' => $_SESSION['db_id']);
 //server isn't receiving userId
@@ -12,13 +13,13 @@ $resp = curl_exec($ch);
 
 if ($e = curl_error($ch)) {
     curl_close($ch);
-    header('location: ../multi-link.live/index.php?e=serverError');
+    header('location: ' . $ROOT . '/multi-link.live/pages/signIn.php?e=serverError');
     exit;
 } else {
     $decoded = json_decode($resp);
     
     if (isset($decoded->message)) {
-        header('location: ../multi-link.live/index.php?e=serverErrorEmptyRequest');
+        header('location: ' . $ROOT . '/multi-link.live/pages/signIn.php?e=serverErrorEmptyRequest');
         exit;
     }
     
