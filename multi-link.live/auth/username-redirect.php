@@ -26,7 +26,7 @@
             $resp = curl_exec($ch);
             if ($e = curl_error($ch)) {
                 echo $e;
-                header('location: ../pages/signIn.php?e=couldNotReachBackend');
+                header('location: ../pages/signIn.php?e=' . $e);
                 exit;
             } else {
                 $decoded = json_decode($resp);
