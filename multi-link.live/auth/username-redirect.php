@@ -31,8 +31,8 @@
                 header('location: ../pages/signIn.php?e=' . $e);
                 exit;
             }
-            else if ($decoded == null){
-                header('location: ../pages/signIn.php?e=noRedirectRecieved');
+            else if ($decoded->redirectLink == null){
+                header('location: ../pages/signIn.php?e=' . $decoded);
                 exit;
             }
             else {
