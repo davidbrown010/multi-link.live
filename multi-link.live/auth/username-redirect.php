@@ -27,7 +27,7 @@
             $decoded = json_decode($resp);
 
             print_r($decoded);
-            /*
+            
             if ($e = curl_error($ch)) {
                 echo $e;
                 header('location: ../pages/signIn.php?e=' . $e);
@@ -40,7 +40,7 @@
             else {
                 header("Location: " . $decoded->redirectLink);
                 exit;
-            }*/
+            }
             
             curl_close($ch);
             echo "success";
