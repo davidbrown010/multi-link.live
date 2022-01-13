@@ -14,7 +14,7 @@
     <?php   
     unset($_SESSION['login_username']);
     if (!isset($_SESSION['db_id'])) {
-        header('location: ../index.php?e=loginFailed');
+        header('location: ../multi-link.live/pages/signIn.php?e=loginFailed');
         exit;
     }
     $ROOT = '..';
