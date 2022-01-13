@@ -1,5 +1,5 @@
 <?php
-include_once '../../multi-link.live/auth/domain.php';
+include_once $ROOT . '/multi-link.live/auth/domain.php';
 
 $ch = curl_init();
 $url = $NODE_DOMAIN . '/users';
@@ -23,7 +23,6 @@ if ($e = curl_error($ch)) {
         exit;
     }
     
-    $_SESSION['decoded'] = $decoded;
     $_SESSION['user_PCO_id'] = $decoded -> userPCO_Id;
     $_SESSION['user_username'] = $decoded -> username;
     $_SESSION['user_first_name'] = $decoded -> firstName;
