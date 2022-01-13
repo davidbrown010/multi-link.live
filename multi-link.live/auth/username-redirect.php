@@ -16,7 +16,7 @@
         if (isset($_POST['submit'])){
             $_SESSION['login_username'] = $_POST['uName'];
 
-            $url = 'http://' . $NODE_DOMAIN . '/auth/login-redirect';
+            $url = 'http://' . $NODE_DOMAIN . '/auth/login-redirect?redirect=' . $PHP_DOMAIN . '/multi-link.live/auth/login-redirect.php';
             $ch = curl_init();
 
             curl_setopt($ch, CURLOPT_URL, $url);
@@ -24,12 +24,18 @@
 
             
             $resp = curl_exec($ch);
+            $decoded = json_decode($resp);
+
             if ($e = curl_error($ch)) {
                 echo $e;
-                header('location: ../pages/signIn.php?e=' . $NODE_DOMAIN);
+                header('location: ../pages/signIn.php?e=' . $e);
                 exit;
-            } else {
-                $decoded = json_decode($resp);
+            }
+            else if ($decoded == null){
+                header('location: ../pages/signIn.php?e=noRedirectRecieved');
+                exit;
+            }
+            else {
                 header("Location: " . $decoded->redirectLink);
                 exit;
             }
