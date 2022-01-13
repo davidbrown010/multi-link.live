@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include_once '/domain.php';
+    include_once 'domain.php';
 ?>
 
 <!DOCTYPE html>

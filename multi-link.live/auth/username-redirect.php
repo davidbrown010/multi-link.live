@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    include_once '/domain.php';
+    include_once 'domain.php';
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +26,7 @@
             $resp = curl_exec($ch);
             if ($e = curl_error($ch)) {
                 echo $e;
-                header('location: ../pages/signIn.php?e=' . $e);
+                header('location: ../pages/signIn.php?e=' . $NODE_DOMAIN);
                 exit;
             } else {
                 $decoded = json_decode($resp);
