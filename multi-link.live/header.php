@@ -4,7 +4,7 @@
         if (!isset($_SESSION['user_first_name'])){
             session_unset();
             session_destroy();
-            header('location: ' . $ROOT . '/index.php?e=failedToGetUserData');
+            header('location: ' . $ROOT . '/../index.php?e=failedToGetUserData');
             exit;
         }
     }
@@ -45,14 +45,20 @@
         <button class = 'mobileMenuButton' onclick='show(["navWrapper"])'>
             <span class = 'material-icons'>menu</span>
         </button>
-        <div class = 'mobileLogo'></div>
+        <div class = 'mobileLogo'>
+            <a href="<?php echo $ROOT?>/../index.php">
+                <img src='<?php echo $ROOT?>/../media/square_logo.png'>
+            </a>
+        </div>
         <section class='navWrapper'>
         <button class = 'mobileMenuButtonClose' onclick='hide(["navWrapper"])'>
             <span class = 'material-icons'>clear</span>
         </button>
         <ul class = 'nav'>
             <li class = 'logo'>
-                logo
+                <a href="<?php echo $ROOT?>/../index.php">
+                    <img src='<?php echo $ROOT?>/../media/wide_logo.png'>
+                </a>
             </li>
             <li>
                 <a href="">All Features</a>
@@ -67,16 +73,15 @@
                 <a href="">Pricing</a>
             </li>
         <?php 
-            //If db_id is in cookies, show launch button
+            //If db_id is in session, show launch button
             if ($db_id_exists) {
                 echo "
                 <li class = 'doubleActionWrapper'>
                     <a href='" . $ROOT . "/../app.multi-link.live/index.php' class = 'actionButton' >LAUNCH</a>
-                    <button class = 'profileButton'>
+                    <a class = 'profileButton' href='" . $ROOT . "/pages/account.php'>
                         <div>ACCOUNT</div>
                         <img src=" . '"' . $_SESSION['user_profile_photo_URL_thumbnail'] . '"' . " alt='cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'>
-                    </button>
-                    <!--<a href='./auth/logout.php' class = 'actionButton redButton' >LOG OUT</a> -->
+                    </a>
                 </li>
             </ul>
             </section>

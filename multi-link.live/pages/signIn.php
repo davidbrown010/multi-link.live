@@ -2,15 +2,12 @@
     $ROOT = '..';
     include_once $ROOT . '/header.php';
 ?>
-<link rel='stylesheet' href="<?php echo $ROOT?>/styles/signUp.css">
+<link rel='stylesheet' href="<?php echo $ROOT?>/styles/signIn.css">
 
-<?php
-    print_r($_SESSION);
-?>
-
+<section class = 'signInBackground'></section>
 
 <div class = 'formsWrapper'>
-    <form id = 'logIn' action='<?php echo $ROOT?>/auth/username-redirect.php' method='post'>
+    <form id = 'logIn' action='<?php echo $ROOT?>/auth/login-redirect.php' method='post'>
         <label>Log In.</label>
         <input required='required' type='text' name='uName' placeholder='Enter your username'>
         <button type='submit' name='submit'>LOG IN</button>

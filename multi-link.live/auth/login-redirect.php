@@ -13,22 +13,17 @@
 </head>
 <body>
     <?php
-    if (!isset($_GET['code'])){
-        print_r("Authentication Failed");
-        header('location: ../pages/signIn.php?e=unableToAccessUser');
-        exit;
-    }
-    else {
+    if (isset($_POST['submit'])){
         try {
             $ch = curl_init();
-            $url = $NODE_DOMAIN . '/users/login?username=' . $_SESSION['login_username'];
+            $url = $NODE_DOMAIN . '/users/login?username=' . $_POST['uName'];
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
+    
             $resp = curl_exec($ch);
-
+    
             
-
+    
             $decoded = json_decode($resp);
             print_r($decoded);
             
@@ -41,7 +36,10 @@
             header('location: ../pages/signIn.php?e=unableToAccessBackend');
             exit;
         }
-        
+    }
+    else {
+        header('location: ../pages/signIn.php?e=formSubmissionError');
+        exit;
     }
     
 

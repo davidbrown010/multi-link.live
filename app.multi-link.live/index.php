@@ -11,8 +11,7 @@
     <title>Document</title>
 </head>
 <body>
-    <?php   
-    unset($_SESSION['login_username']);
+    <?php
     if (!isset($_SESSION['db_id'])) {
         header('location: ../multi-link.live/pages/signIn.php?e=loginFailed');
         exit;

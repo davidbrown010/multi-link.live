@@ -1,0 +1,16 @@
+.signInBackground{
+    background-image: url('../../media/signIn_bg.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height:30vh;
+}
+
+
+
+#logIn button{
+    background-color:var(--orange);
+}
+#signUp button{
+    background-color:var(--purple);
+}

@@ -24,7 +24,7 @@
         $_SESSION['login_username'] = $_POST['username'];
 
         $ch = curl_init();
-        $url = $NODE_DOMAIN . '/auth/auth-redirect?redirct=' . $PHP_DOMAIN . '/multi-link.live/auth/login-redirect.php';
+        $url = $NODE_DOMAIN . '/auth/auth-redirect?redirect=' . $PHP_DOMAIN . '/multi-link.live/auth/register-redirect.php';
 
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -53,7 +53,7 @@
             'code' => $_GET['code'],
             'client_id' => '3053bd24aa4ba94cc6c2e4dfe3784bf57a767e31ea94776a4bb05d00291aa2e6',
             'client_secret' => '86a47f13962a3f7efca0f203855d67020d37c0cd55541f5e645084ca55246d71',
-            'redirect_uri' => 'http://192.168.4.40:5000/multi-link.live/auth/register-redirect.php'
+            'redirect_uri' => $PHP_DOMAIN . '/multi-link.live/auth/register-redirect.php'
         );
 
         $data = http_build_query($data_array);
@@ -79,7 +79,7 @@
             //successfully got access_token and refresh_token
             $decoded = json_decode($resp);
 
-
+            
 
             $url = $NODE_DOMAIN . '/users';
             $ch = curl_init();
