@@ -62,7 +62,7 @@
         width:20vw;
     }
     .formsWrapper form.hidden > * {
-        opacity:.5;
+        opacity:0;
     }
     .formsWrapper form.hidden h2{
         font-size: 3vw;
