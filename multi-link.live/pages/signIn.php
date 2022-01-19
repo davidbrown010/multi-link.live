@@ -6,18 +6,24 @@
 
 <section class = 'signInBackground'></section>
 
-<div class = 'formsWrapper'>
-    <form id = 'logIn' action='<?php echo $ROOT?>/auth/login-redirect.php' method='post'>
-        <label>Log In.</label>
-        <input required='required' type='text' name='uName' placeholder='Enter your username'>
+<section class = 'formsWrapper'>
+    <form class = 'logInForm' id = 'logIn' action='<?php echo $ROOT?>/auth/login-redirect.php' method='post'>
+        <h2>Log In.</h2>
+        <div>
+            <input required='required' type='text' name='uName' placeholder='Enter your username'>
+            <label for="username">Enter username.</label>
+        </div>
         <button type='submit' name='submit'>LOG IN</button>
     </form>
-    <form id = 'signUp' action='<?php echo $ROOT?>/auth/register-redirect.php' method='post'>
-        <label>Sign Up.</label>
-        <input required='required' type='text' name='username' placeholder='Create your username'>
+    <form class = 'signUpForm hidden' id = 'signUp' action='<?php echo $ROOT?>/auth/register-redirect.php' method='post'>
+        <h2>Sign Up.</h2>
+        <div>
+            <input required='required' type='text' name='username' placeholder='Create your username'>
+            <label for="username">Create username.</label>
+        </div>
         <button type='submit' name='submit'>REGISTER</button>
     </form>
-</div>
+</section>
 
 
 
@@ -26,4 +32,4 @@
     include_once $ROOT . '/footer.php';
 ?>
  
-
+<script src = '../js/signIn.js'></script>

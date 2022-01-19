@@ -96,4 +96,12 @@
             </section>";
             }
         ?>
-        
+        <section class="loadingPageCoverer">
+            <div class ='wrapper'>
+                <div class='loadingCircle'></div>
+                <div class='loadingCircle'></div>
+                <div class='loadingCircle'></div>
+                <div class='loadingCircle'></div>
+                <div class='loadingCircle'></div>
+            </div>
+        </section>
