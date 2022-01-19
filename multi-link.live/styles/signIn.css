@@ -62,7 +62,7 @@
         width:20vw;
     }
     .formsWrapper form.hidden > * {
-        opacity:0;
+        opacity:.5;
     }
     .formsWrapper form.hidden h2{
         font-size: 3vw;
@@ -70,8 +70,10 @@
         cursor:pointer;
     }
     .formsWrapper form.hidden button {
-        padding-left:10px;
-        padding-right:10px;
+        padding-left:5px;
+        padding-right:5px;
+        font-size:50%;
+        min-width:0px;
     }
     .formsWrapper form{
         width:80vw;
