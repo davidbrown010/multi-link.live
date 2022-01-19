@@ -5,6 +5,7 @@
     --red: #e95e63;
     --orange: #de926a;
     --purple: #542D9B;
+    --lightGrey: rgb(245,245,245);
 }
 * {
     font-family: 'Roboto', sans-serif;
@@ -55,6 +56,11 @@ textarea {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+}
+section {
+    --section-padding: calc(300 * calc(100vw / 1250) - 100px);
+    padding-left: var(--section-padding);
+    padding-right: var(--section-padding);
 }
 
 .navWrapper {
@@ -264,7 +270,7 @@ ul.nav li .profileButton div{
 }
 
 section.footer {
-    background-color:rgb(238, 238, 238);
+    background-color:var(--lightGrey);
     height:200px;
 }
 

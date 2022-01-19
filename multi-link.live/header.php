@@ -50,7 +50,7 @@
                 <img src='<?php echo $ROOT?>/../media/square_logo.png'>
             </a>
         </div>
-        <section class='navWrapper'>
+        <nav class='navWrapper'>
         <button class = 'mobileMenuButtonClose' onclick='hide(["navWrapper"])'>
             <span class = 'material-icons'>clear</span>
         </button>
@@ -84,7 +84,7 @@
                     </a>
                 </li>
             </ul>
-            </section>
+            </nav>
                 ";
             }
             else {
@@ -93,7 +93,7 @@
                 <a href='" . $ROOT . "/pages/signIn.php' class = 'actionButton'>GET STARTED</a>
                 </li>
             </ul>
-            </section>";
+            </nav>";
             }
         ?>
         <section class="loadingPageCoverer">
